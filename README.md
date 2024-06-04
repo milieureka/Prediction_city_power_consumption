@@ -20,4 +20,38 @@ The models aims to forecast electricity consumption at intervals of every 10 min
 - Support Vector Machine forregression (SVR) with a radial basis function kernel,
 - Stacked Generalization
 
-## EDA
+## Data preprocess
+- Extracting attribute from 'Datetime' columns to month, day of the month, hour, day of the year, week of the year, day of the week, quarter, and minute. These are independent variables that are analyzed for their correlation with the dependent variable (power consumtion)
+- Check feature importance based on mean decrease in impurity by using random forest. As illustrated in plot, although all variables contribute to the model, **the hour** and temperature are the most significant.
+![Feature importance](feature_importance.png)
+- Each algorithm is developed using a training split of 75% of the data, with the remaining 25% allocated for
+testing.
+- Normalized the X to [0,1], making it suitable for some ML models like SVR and neural networks.
+- Used GridSearch to find optimal hyperparameter.
+
+## Evaluation
+The test set is typically employed to evaluate models. Here training set also be utilized to show the ability of learning. For comparative analysis, the median across nine implementations in all dataset models was used also. 
+
+**4 initial models**
+RSME AND MAE COMPARISON OF ALGORITHMS IN 3 DISTRIBUTIONS FOR 10 MINUTES POWER CONSUMPTION
+![RSME AND MAE COMPARISON OF ALGORITHMS IN 3 DISTRIBUTIONS FOR 10 MINUTES POWER CONSUMPTION](10_mins.png)
+RSME AND MAE COMPARISON OF ALGORITHMS IN 3 DISTRIBUTION NETWORKS FOR THE ONE HOURLY POWER CONSUMPTION
+![RSME AND MAE COMPARISON OF ALGORITHMS IN 3 DISTRIBUTION NETWORKS FOR THE ONE HOURLY POWER CONSUMPTION](hourly.png)
+The 2 tables findings indicate that the random forest model generally outperforms others, achieving lower
+prediction errors
+
+**Adding stacking model**
+RSME AND MAE COMPARISON OF ALGORITHMS (WITH STACKING) IN 3 DISTRIBUTIONS FOR 10 MINUTES POWER CONSUMPTION
+![RSME AND MAE COMPARISON OF ALGORITHMS (WITH STACKING) IN 3 DISTRIBUTIONS FOR 10 MINUTES POWER CONSUMPTION](10_mins.png)
+RSME AND MAE COMPARISON OF ALGORITHMS (WITH STACKING) IN 3 DISTRIBUTIONS FOR THE ONE HOURLY POWER CONSUMPTION
+![RSME AND MAE COMPARISON OF ALGORITHMS (WITH STACKING) IN 3 DISTRIBUTIONS FOR THE ONE HOURLY POWER CONSUMPTION](Stack_1_h.png)
+As we can see, RF is still a best model, however stacking is also close with RF. Even though stacking expect to be outperform the base model due to the generalization from multiple prediction, but there is no certainty that ensemble model will be outperform the base one.
+
+I think the reason for this might due to overfitting, because stacking involves layering models on top of one another, the current based models if they complex  might lead to overfit and make the performance worse than base model.
+
+
+
+
+
+
+
