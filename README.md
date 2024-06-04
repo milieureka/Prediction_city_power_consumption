@@ -33,6 +33,7 @@ testing.
 The test set is typically employed to evaluate models. Here training set also be utilized to show the ability of learning. For comparative analysis, the median across nine implementations in all dataset models was used also. 
 
 **4 initial models**
+
 RSME AND MAE COMPARISON OF ALGORITHMS IN 3 DISTRIBUTIONS FOR 10 MINUTES POWER CONSUMPTION
 ![RSME AND MAE COMPARISON OF ALGORITHMS IN 3 DISTRIBUTIONS FOR 10 MINUTES POWER CONSUMPTION](10_mins.png)
 RSME AND MAE COMPARISON OF ALGORITHMS IN 3 DISTRIBUTION NETWORKS FOR THE ONE HOURLY POWER CONSUMPTION
@@ -41,6 +42,7 @@ The 2 tables findings indicate that the random forest model generally outperform
 prediction errors
 
 **Adding stacking model**
+
 RSME AND MAE COMPARISON OF ALGORITHMS (WITH STACKING) IN 3 DISTRIBUTIONS FOR 10 MINUTES POWER CONSUMPTION
 ![RSME AND MAE COMPARISON OF ALGORITHMS (WITH STACKING) IN 3 DISTRIBUTIONS FOR 10 MINUTES POWER CONSUMPTION](10_mins.png)
 RSME AND MAE COMPARISON OF ALGORITHMS (WITH STACKING) IN 3 DISTRIBUTIONS FOR THE ONE HOURLY POWER CONSUMPTION
